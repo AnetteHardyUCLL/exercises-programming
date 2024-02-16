@@ -2,4 +2,4 @@
 
 
 def make_path(parts):
-    pass
+    return "/".join(parts)
