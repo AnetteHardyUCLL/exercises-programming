@@ -30,4 +30,5 @@ object.method()
 
 # Task
 
-Create a class called `Wall` on line 1. It should have a property called `armor` that is initialized to `10` and a `height` that starts at `5`.
+Add a `fortify()` method to your wall class. It should double the current `armor` property.
+
