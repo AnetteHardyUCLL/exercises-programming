@@ -2,4 +2,4 @@ import re
 
 
 def only_digits(string):
-    pass
+    return re.fullmatch("[0-9]*", string)
