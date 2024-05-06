@@ -1,6 +1,6 @@
 # Smart Parameters
 
-Say we're working on our `Movie`s and we want to determine how many movies a certain directory has made.
+Say we're working on our `Movie`s and we want to determine how many movies a certain director has made.
 We can then write the following code:
 
 ```python

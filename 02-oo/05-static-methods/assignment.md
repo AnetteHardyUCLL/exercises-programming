@@ -106,7 +106,7 @@ def millimeters(amount):
     return Distance(size_in_meters=amount / 1000)
 
 def miles(amount):
-    return Distance(size_in_meters=amount / 1609.34)
+    return Distance(size_in_meters=amount * 1609.34)
 
 # and so on
 ```
@@ -131,7 +131,7 @@ class Distance:
 
     @staticmethod
     def miles(amount):
-        return Distance(size_in_meters=amount / 1609.34)
+        return Distance(size_in_meters=amount * 1609.34)
 
     # ...
 ```

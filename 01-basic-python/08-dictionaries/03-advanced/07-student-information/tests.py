@@ -123,7 +123,7 @@ def test_courses(dictionary):
 
 
 @pytest.mark.parametrize("dictionary", testdata)
-def test_most_common_course(dictionary):
+def test_most_common_courses(dictionary):
     function_name = 'most_common_courses'
     if not hasattr(student, function_name):
         pytest.skip(f"Missing function {function_name}")

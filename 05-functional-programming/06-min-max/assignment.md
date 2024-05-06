@@ -19,7 +19,7 @@ This means we could have `Person`'s `__lt__` method compare ages, but that would
 We could work in two steps:
 
 ```python
-max_age = [person.age for person in people]
+max_age = max([person.age for person in people])
 oldest_people = [person for person in people if person.age == max_age]
 ```
 

@@ -38,8 +38,8 @@ Return them as a set.
 
 The parameter `data` is a dictionary with the same structure as what `process_data` returns.
 
-## `most_common_course`
+## `most_common_courses`
 
-Create a function `most_common_course(data)` that returns the set of courses that is taken by the most number of students.
+Create a function `most_common_courses(data)` that returns the set of courses that is taken by the most number of students.
 The parameter `data` is a dictionary with the same structure as what `process_data` returns.
 For example, say `Math` is taken by 5 students, `Spanish` by 3, and `Biology` by 5, the function should return `{'Math', 'Biology'}`.
