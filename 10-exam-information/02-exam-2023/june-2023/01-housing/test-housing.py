@@ -1,11 +1,56 @@
-# Write your own tests for the housing.py file here.
-# You must include the tests asked for in the assignment for full credit.
-# You may add additional tests if you would like to test your code more thoroughly.
-# Additional tests will not result in a higher grade.
-# This file must be able to be run without error in order to receive credit for the required testing.
-####
-# Schrijf hier je eigen tests voor het housing.py bestand.
-# Je moet de gevraagde tests in de opdracht opnemen voor volledige waardering.
-# Je mag extra tests toevoegen als je je code grondiger wilt testen.
-# Extra tests zullen niet leiden tot een hoger cijfer.
-# Dit bestand moet zonder fouten uitgevoerd kunnen worden om punten te krijgen voor de vereiste testen.
+import pytest
+from housing import *
+
+
+# WITH EXPECTED VALUES IN PARAMETRIZE
+# helper function for expected value
+def maximum_occupants_villa(area, number_of_rooms):
+    return min(area // 20, number_of_rooms * 2)
+
+
+@pytest.mark.parametrize(
+    "area, number_of_rooms, expected",
+    [
+        (151, 4, maximum_occupants_villa(151, 4)),
+        (90, 2, maximum_occupants_villa(90, 2)),
+        (100, 3, maximum_occupants_villa(100, 3)),
+        (200, 5, maximum_occupants_villa(200, 5)),
+    ],
+)
+def test_maximum_occupants_villa(area, number_of_rooms, expected):
+    # create villa
+    villa = Villa("Roeselbergdal 44, 3012 Wilsele", area, number_of_rooms, 1)
+
+    assert villa.maximum_occupants == expected
+
+
+@pytest.mark.parametrize(
+    "area",
+    [151, 90, 100, 200],
+)
+@pytest.mark.parametrize(
+    "number_of_rooms",
+    [4, 2, 3, 5],
+)
+def test_maximum_occupants_villa(area, number_of_rooms):
+    # create villa
+    villa = Villa("Roeselbergdal 44, 3012 Wilsele", area, number_of_rooms, 1)
+
+    # maximum_occupants formula
+    maximum_occupants = min(area // 20, number_of_rooms * 2)
+
+    assert villa.maximum_occupants == maximum_occupants
+
+
+@pytest.mark.parametrize(
+    "area",
+    [20, 30, 40, 72],
+)
+def test_maximum_occupants_kot(area):
+    # create kot
+    kot = StudentKot("Kortestraat 6, 3000 Leuven", area)
+
+    # maximum_occupants formula
+    maximum_occupants = min(area // 20, 2)
+
+    assert kot.maximum_occupants == maximum_occupants

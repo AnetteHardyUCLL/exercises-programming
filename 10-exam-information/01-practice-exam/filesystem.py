@@ -54,7 +54,7 @@ class Entity(ABC):
         if not self.is_valid_name(name):
             raise RuntimeError("Invalid name")
         self.__storage = storage
-        self.__name = name
+        self.name = name
 
     @property
     def name(self):
